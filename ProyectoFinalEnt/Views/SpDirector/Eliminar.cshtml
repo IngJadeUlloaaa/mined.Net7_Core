@@ -1,0 +1,40 @@
+﻿@model Director
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Editar</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container mt-5 pt-5">
+        <div class="row justify-content-center">
+            <div class="card">
+                <div class="card-header">
+                    editar
+                </div>
+            </div>
+            <div class="card-body">
+                <form asp-controller="SpDirector" asp-action="Eliminar" metohod="post">
+                    <input asp-for="IdD" type="hidden" class="form-control"/>
+                    <div class="mb-3">
+                        <div class="alert alert-danger" role="alert">
+                            desea eliminar el contacto: @Html.DisplayTextFor(m => m.NombreD)?
+                        </div>
+                        <div class="d-grid gap-2 mb-3">
+                            <button class="btn btn-primary" type="submit">Eliminar</button>
+                        </div>
+                        <a asp-controller="SpDirector" asp-action="Listar" class="btn btn-warning"> Volver a la lista></a>
+                        <br>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿@model List<Camionero>
+ 
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>IniciarSesion</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            Listar Contacto
+        </div>
+        <div class="card-body">
+            <a asp-controller="Inicio" asp-action="Registrarse_C" class="btn btn-succcess">crear Nuevo</a>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Cedula</th>
+                        <th>Licencias</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Correo</th>
+                        <th>Codigo del paquete</th>
+                        <th>ID del Encargado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.IdC</td>
+                            <td>@item.CedulaC</td>
+                            <td>@item.LicenciaC</td>
+                            <td>@item.NombreC</td>
+                            <td>@item.ApellidoC</td>
+                            <td>@item.CorreoC</td>
+                            <td>@item.CodigoPpk</td>
+                            <td>@item.IdDpk</td>
+                            <td>
+                                <a asp-controller="SpCamioneros" asp-action="Editar_C" class="btn btn-primary btn-sm"
+                                   asp-route-buscarId="@item.IdC">Editar</a>
+                            </td>
+                            <td>
+                                <a asp-controller="SpCamioneros" asp-action="Eliminar_C" class="btn btn-primary btn-sm"
+                                   asp-route-buscarId="@item.IdC">Eliminar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

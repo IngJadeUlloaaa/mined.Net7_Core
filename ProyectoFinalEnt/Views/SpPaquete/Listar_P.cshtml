@@ -1,0 +1,52 @@
+﻿@model List<Paquete>
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>IniciarSesion</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            Listar Contacto
+        </div>
+        <div class="card-body">
+            <a asp-controller="SpPaquete" asp-action="Registrarse_P" class="btn btn-succcess">crear Nuevo</a>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Descripcion</th>
+                        <th>Nombre del destino</th>
+                        <th>Direccion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.CodigoP</td>
+                            <td>@item.DescripP</td>
+                            <td>@item.NombreInstP</td>
+                            <td>@item.DirecInstP</td>
+                            <td>
+                                <a asp-controller="SpPaquete" asp-action="Editar_P" class="btn btn-primary btn-sm"
+                                   asp-route-buscarId="@item.CodigoP">Editar</a>
+                            </td>
+                            <td>
+                                <a asp-controller="SpPaquete" asp-action="Eliminar_P" class="btn btn-primary btn-sm"
+                                   asp-route-buscarId="@item.CodigoP">Eliminar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>

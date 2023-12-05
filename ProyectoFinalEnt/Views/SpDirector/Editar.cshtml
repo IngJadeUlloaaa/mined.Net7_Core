@@ -1,0 +1,45 @@
+﻿@model Director
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Editar</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container mt-5 pt-5">
+        <div class="row justify-content-center">
+            <div class="card">
+                <div class="card-header">
+                    editar
+                </div>
+            </div>
+            <div class="card-body">
+                <form asp-controller="SpDirector" asp-action="Editar" metohod="post">
+                    <input asp-for="IdD" type="hidden" class="form-control" />
+                    <div class="mb-3">
+                        <br>
+                        <input class="form-control mb-3" type="text" placeholder="Cedula" asp-for="CedulaD">
+                        <span asp-validation-for="CedulaD" class="text-danger"></span>
+                        <input class="form-control mb-3" type="text" placeholder="Nombre" asp-for="NombreD">
+                        <input class="form-control mb-3" type="text" placeholder="Apellido" asp-for="ApellidoD">
+                        <input class="form-control mb-3" type="text" placeholder="Instituto" asp-for="NombreInstD">
+                        <input asp-for="CorreoD" type="hidden" class="form-control" />
+                        <input asp-for="ClaveD" type="hidden" class="form-control" />
+                        <div class="d-grid gap-2 mb-3">
+                            <button class="btn btn-primary" type="submit">Registrarse</button>
+                        </div>
+                        <a asp-controller="SpDirector" asp-action="Listar" class="btn btn-warning"> Volver a la lista></a>
+                        <br>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

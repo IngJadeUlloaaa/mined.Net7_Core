@@ -1,0 +1,53 @@
+﻿@model Camionero
+<!DOCTYPE html>
+<html> 
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Editar</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body> 
+    <div class="container mt-5 pt-5">
+        <div class="row justify-content-center">
+            <div class="card">
+                <div class="card-header">
+                    editar
+                </div>
+            </div>
+            <div class="card-body">
+                <form asp-controller="SpCamioneros" asp-action="Editar_C" metohod="post">
+                    <input asp-for="IdC" type="hidden" class="form-control" />
+                    <div class="mb-3">
+                        <br>
+                        <input class="form-control mb-3" type="text" placeholder="Cedula" asp-for="CedulaC">
+                        <span asp-validation-for="CedulaC" class="text-danger"></span>
+                        <input class="form-control mb-3" type="text" placeholder="Licencia" asp-for="LicenciaC">
+                        <input class="form-control mb-3" type="text" placeholder="Nombre" asp-for="NombreC">
+                        <input class="form-control mb-3" type="text" placeholder="Apellido" asp-for="ApellidoC">
+                        <input asp-for="CorreoC" type="hidden" class="form-control"/>
+                        <input asp-for="ClaveC" type="hidden" class="form-control"/>
+                        <div class="form-group">
+                            <label asp-for="CodigoPpk" class="control-label" type="text" placeholder="Codigo de paquete" required></label>
+                            <select asp-for="CodigoPpk" class="form-control" asp-items="ViewBag.CodigoPpk"></select>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label asp-for="IdDpk" class="control-label" type="text" placeholder="Identificador de los directores" required></label>
+                            <select asp-for="IdDpk" class="form-control" asp-items="ViewBag.IdDpk"></select>
+                        </div>
+                        <br>
+                        <div class="d-grid gap-2 mb-3">
+                            <button class="btn btn-primary" type="submit">Registrarse</button>
+                        </div>
+                        <a asp-controller="SpCamioneros" asp-action="Listar_C" class="btn btn-warning"> Volver a la lista></a>
+                        <br>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿@model Paquete;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container mt-5 pt-5">
+        <div class="row justify-content-center">
+            <div class="card">
+                <div class="card-header">
+                    Registrarse
+                </div>
+            </div>
+            <div class="card-body">
+                <form asp-controller="SpPaquete" asp-action="Editar_P" metohod="post">
+                    <input asp-for="CodigoP" type="hidden" class="form-control" />
+                    <br>
+                    <input class="form-control mb-3" type="text" placeholder="Descripcion" asp-for="DescripP">
+                    <input class="form-control mb-3" type="text" placeholder="Nombre del instituto" asp-for="NombreInstP">
+                    <input class="form-control mb-3" type="text" placeholder="Direccion" asp-for="DirecInstP">
+                    <span asp-validation-for="DirecInstP" class="text-danger"></span>
+                    <div class="d-grid gap-2 mb-3">
+                        <button class="btn btn-primary" type="submit">Agregar</button>
+                    </div><br>
+                    <br>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

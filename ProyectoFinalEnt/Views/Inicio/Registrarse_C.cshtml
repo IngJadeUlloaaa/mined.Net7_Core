@@ -1,0 +1,67 @@
+﻿@model ProyectoFinalEnt.Models.Camionero;
+@{
+    Layout = null;
+}
+<!DOCTYPE html> 
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container mt-5 pt-5">
+        <div class="row justify-content-center">
+            <div class="card">
+                <div class="card-header">
+                    Registrarse
+                </div>
+            </div>
+            <div class="card-body">
+                <form asp-controller="Inicio" asp-action="Registrarse_C" metohod="post">
+                    <label for="usuario">Director</label>
+                    <br>
+                    <input class="form-control mb-3" type="text" placeholder="Cedula" asp-for="CedulaC">
+                    <span asp-validation-for="CedulaC" class="text-danger"></span>
+                    <input class="form-control mb-3" type="text" placeholder="Licencia" asp-for="LicenciaC">
+                    <input class="form-control mb-3" type="text" placeholder="Nombre" asp-for="NombreC">
+                    <input class="form-control mb-3" type="text" placeholder="Apellido" asp-for="ApellidoC">
+                    <input class="form-control mb-3" type="text" placeholder="Correo" asp-for="CorreoC">
+                    <span asp-validation-for="CorreoC" class="text-danger"></span>
+                    <input class="form-control mb-3" type="text" placeholder="Clave" asp-for="ClaveC">
+                    <span asp-validation-for="ClaveC" class="text-danger"></span>
+                    <div class="form-group">
+                        <input asp-for="IdDpk" type="hidden" class="form-control" />
+                        <select asp-for="CodigoPpk" type="hidden" class="form-control" asp-items="ViewBag.CodigoPpk"></select>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input asp-for="IdDpk" type="hidden" class="form-control" />
+                        <select asp-for="IdDpk" type="hidden" class="form-control" asp-items="ViewBag.IdDpk"></select>
+                    </div>
+                    <br>
+                    <br>
+                    <button class="btn btn-primary" type="submit">Registrarse</button>
+
+                    @if (ViewData["Mensaje"] != null)
+                    {
+                        <div class="form-group">
+                            <div class="alert alert-danger" role="alert">
+                                @ViewData["Mensaje"]
+                            </div>
+                        </div>
+                    }
+                    ¿Ya tienes una cuenta?<a href="@Url.Action("IniciarSesion","Inicio")">Iniciar Sesion</a>
+                    <br>
+                    <br>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

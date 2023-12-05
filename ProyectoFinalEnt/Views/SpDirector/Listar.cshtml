@@ -1,0 +1,56 @@
+﻿@model List<Director>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>IniciarSesion</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            Listar Contacto
+        </div>
+        <div class="card-body">
+            <a asp-controller="Inicio" asp-action="Registrarse_D" class="btn btn-succcess">crear Nuevo</a>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Cedula</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Instituto</th>
+                        <th>Corre electronico</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.IdD</td>
+                            <td>@item.CedulaD</td>
+                            <td>@item.NombreD</td>
+                            <td>@item.ApellidoD</td>
+                            <td>@item.NombreInstD</td>
+                            <td>@item.CorreoD</td>
+                            <td>
+                                <a asp-controller="SpDirector" asp-action="Editar" class="btn btn-primary btn-sm"
+                                   asp-route-buscarId="@item.IdD">Editar</a>
+                            </td>
+                            <td>
+                                <a asp-controller="SpDirector" asp-action="Eliminar" class="btn btn-primary btn-sm"
+                                   asp-route-buscarId="@item.IdD">Eliminar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

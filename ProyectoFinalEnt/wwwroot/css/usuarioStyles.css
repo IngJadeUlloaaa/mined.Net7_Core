@@ -1,0 +1,237 @@
+﻿/* reem kufi ink */
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi+Ink&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Reem Kufi Ink', sans-serif;
+}
+
+/* variables */
+:root {
+    --backgroundNavmenu: #fffad0;
+    --backgroundParent: #f4debc;
+    --backgroundBtn: #fab679;
+    --titleNavmenu: #6a3200;
+    --icnColor: #ee6500;
+    --icnWhat: #54FF5D;
+    --icnTl: #54DDFF;
+    --icnFc: #5486FF;
+    --body: #fff7f4;
+}
+
+body {
+    background-color: var(--body);
+}
+
+/* parent navmenu */
+.parent-container-navmenu-home {
+    width: 100%;
+    height: auto;
+    padding: 4.5rem 7rem 0;
+}
+
+/* interface */
+.interface-container-navmenu-home {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--backgroundNavmenu);
+    padding: 1rem 0;
+}
+
+/* 1, 2, 3 child */
+.fchild-container-navmenu-home,
+.schild-container-navmenu-home,
+.tchild-container-navmenu-home {
+    width: auto;
+    height: auto;
+    display: flex;
+}
+
+/* title service */
+.title-navmenu-home {
+    color: var(--titleNavmenu);
+    margin: 1rem 5rem;
+    font-size: 1.3rem;
+    text-decoration: none;
+    list-style: none;
+}
+
+i {
+    margin: 0 1rem 0 0;
+}
+
+/* formats */
+.parent-container-format-home {
+    width: auto;
+    height: auto;
+    margin: 0 7rem;
+    background-color: var(--backgroundParent);
+}
+
+/* child */
+.child-container-format-home {
+    width: auto;
+    height: auto;
+    display: flex;
+}
+
+/* first container */
+.fbox-container-format-home {
+    width: 50%;
+    height: auto;
+}
+
+/* box 1 and 2 */
+.box-container-format-home {
+    width: 100%;
+    height: auto;
+}
+
+/* padding container */
+.padding-container {
+    width: 350px;
+    height: auto;
+    display: flex;
+    margin: 5rem 8rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+}
+
+.padding2-container {
+    width: 350px;
+    height: auto;
+    display: flex;
+    margin: -3rem 8rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+}
+
+/* img container */
+.img-container-format-home {
+    width: 50%;
+    height: auto;
+}
+
+/* mainers img */
+.mimg-format-home {
+    width: 150px;
+    height: 100px;
+    border-radius: 0 1rem 0 1rem;
+}
+
+/* truckers img */
+.timg-format-home {
+    width: 150px;
+    height: 100px;
+    border-radius: 0 1rem 0 1rem;
+}
+
+/* secod container */
+.sbox-container-format-home {
+    width: 50%;
+    height: auto;
+}
+
+/* container 2 */
+.container2 {
+    margin: 3rem 4rem;
+}
+
+/* img */
+.img-format-home {
+    width: 100%;
+    height: auto;
+    border-radius: 2rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+/* titles */
+.title-box-format-home {
+    font-size: 1.5rem;
+}
+
+/* read more btn */
+.btn-container-format-home {
+    position: absolute;
+    top: 37rem;
+    left: 15rem;
+    padding: 13px 60px;
+    border-radius: 18px;
+    background-color: var(--backgroundParent);
+    color: var(--titleNavmenu);
+    border: 1px solid;
+}
+
+/* footer */
+.footer-container-home {
+    width: auto;
+    height: auto;
+    margin: 0 7rem;
+    display: flex;
+    background-color: var(--backgroundNavmenu);
+}
+
+/* box 1 */
+.box-footer-container-home {
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly; /* here */
+}
+
+/* containers */
+.fcontainer-footer {
+    display: flex;
+    padding: 2.8rem;
+}
+
+/* titles */
+.title-footer-format-home {
+    font-size: 1.3rem;
+    color: var(--titleNavmenu);
+}
+
+/* box 2 */
+.box2-footer-container-home {
+    width: 50%;
+    height: auto;
+}
+
+.scontainer-footer {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+/* links */
+.a-footer {
+    position: relative;
+    left: 10rem;
+    margin: 0 1rem;
+}
+
+    /* icons */
+
+    .a-footer #fc {
+        font-size: 1.8rem;
+        color: var(--icnFc);
+    }
+
+    .a-footer #tl {
+        font-size: 2rem;
+        color: var(--icnTl);
+        color: var(--icnTl);
+    }
+
+    .a-footer #ws {
+        font-size: 2rem;
+        color: var(--icnWhat);
+    }
